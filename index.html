@@ -34,7 +34,7 @@
             resolution: 'low_resolution',
             sortBy: 'most-recent',
             limit: 12,
-            template: '<a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a>',
+            template: '<a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}{{square}}" /></a>',
             after: function() {
                 // disable button if no more results to load
                 if (!this.hasNext()) {
