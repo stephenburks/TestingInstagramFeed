@@ -3,14 +3,19 @@
 
 <head>
     <title>Instagram Feed Test</title>
+    <script src="instafeed.min.js">
 </head>
 
 <body>
-<br>
-<!-- LightWidget WIDGET -->
-<script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-<iframe src="//lightwidget.com/widgets/e7bca5907eb15e1d8708c1bee4861d7b.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-
+    <div id="instafeed"></div>
+    
+    <script>
+        var userFeed = new Instafeed({
+            get: 'user',
+            userId: 235371069,
+            accessToken: '235371069.1677ed0.05f6daff5e0d4e289854cdd8ca82311e'
+            });
+        userFeed.run();
+    </script>
 </body>
-
 </html>
