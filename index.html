@@ -8,14 +8,55 @@
 
 <body>
     <div id="instafeed"></div>
-    
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+ 
+             var tutorialFeed = new Instafeed ({
+             get: 'user',
+             userId: '235371069',
+             clientId: 'eaf9c7800cff4e03a168b2c7a7e199f2',
+             accessToken: '235371069.1677ed0.05f6daff5e0d4e289854cdd8ca82311e',
+             resolution: 'standard_resolution',
+             sortBy: 'most-recent',
+             limit: 9,
+             template: '<div class="image-item insta-page">' +
+              '<a class="image insta-image" href="{{image}}>' +
+              '<img alt="{{user.full_name}}" src="{{image}}>' +
+              '<div class="img-backdrop-tutorial">' +
+              '<div class="insta-caption">' +
+              '<p>{{caption}}</p>' +
+              '</div>' +
+              '</div>' +
+              '<div class="captions">' +
+              '<a></a>' +
+              '</div>' +
+              '</a>' +
+              '</div>'
+
+             filter: function(image) {
+              return image.type === 'image';
+             },
+
+             after: function () {
+              loader.style.display = 'none';
+                if (!this.hasNext()) {
+                  loadButton.setAttribute('disabled', 'disabled');
+                }
+              }
+            });
+
+            tutorialFeed.run();
+
+            });
+    </script>
+    
+<!--     <script>
         var userFeed = new Instafeed({
             get: 'user',
             userId: 235371069,
             accessToken: '235371069.1677ed0.05f6daff5e0d4e289854cdd8ca82311e'
             });
         userFeed.run();
-    </script>
+    </script> -->
 </body>
 </html>
