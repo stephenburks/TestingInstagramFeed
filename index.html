@@ -9,6 +9,9 @@
           margin: 0;
           padding: 0;
         }
+        #container {
+            margin: 10%;
+        }
         #instafeed {
           width: 100%;
           margin: auto;
@@ -20,8 +23,10 @@
 </head>
 
 <body>
-    <div id="instafeed"></div>
-    <button id="load-more" class="load-more">Load More</button>
+    <div id="container">
+        <div id="instafeed"></div>
+        <button id="load-more" class="load-more">Load More</button>
+    </div>
     <script>
         var userFeed = new Instafeed({
             get: 'user',
