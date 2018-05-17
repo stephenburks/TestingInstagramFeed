@@ -5,23 +5,34 @@
     <title>Instagram Feed Test</title>
     <script src="instafeed.min.js"></script>
     <style>
-        .feed-container {
-            display: grid;
-            grid-gap: 10px;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: auto;
+        #instafeed {
+          max-width:1080px;
+          width: 100%;
+          margin: auto;
+          display: flex;
+          flex-wrap: wrap;
+
+          a {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 50%;
+            background: white;
+
+            @media only screen and (min-width: $lg) {
+              width: 25%;
+            }
+
+            img {
+              display: block;
+              width: 100%;
+            }
+          }
         }
     </style>
 </head>
 
 <body>
-    
-<!--      <div class="feed-container">
-        <a href="{{link}}">
-            <img src="{{image}}"/>
-        </a>
-    </div> -->
-    
     <div id="instafeed"></div>
     <button id="load-more" class="load-more">Load More</button>
     <script>
@@ -30,8 +41,9 @@
             userId: 235371069,
             accessToken: '235371069.1677ed0.05f6daff5e0d4e289854cdd8ca82311e',
             resolution: 'standard_resolution',
+            sortBy: 'most-recent',
             limit: 12,
-            template: '<div class="feed-container"><div class="image-container"><a href="{{image}}"><img src="{{image}}"/></a></div></div>',
+            template: '<a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a>',
             after: function() {
                 // disable button if no more results to load
                 if (!this.hasNext()) {
