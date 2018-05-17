@@ -4,39 +4,18 @@
 <head>
     <title>Instagram Feed Test</title>
     <script src="instafeed.min.js"></script>
-    <style>
-        $lg: 580px;
-
-        html, 
+    <style> 
         body {
           margin: 0;
-          padding: 10px;
-          background: darken(whitesmoke, 10%);
+          padding: 0;
         }
         #instafeed {
-          max-width:1080px;
           width: 100%;
           margin: auto;
-          display: flex;
-          flex-wrap: wrap;
-
-          a {
-            display: flex;
-            align-items: center;
-            position: relative;
-            width: 50%;
-            background: white;
-
-            @media only screen and (min-width: $lg) {
-              width: 25%;
-            }
-
-            img {
-              display: block;
-              width: 100%;
-            }
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: auto;
           }
-        }
     </style>
 </head>
 
