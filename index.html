@@ -47,7 +47,7 @@
             resolution: 'standard_resolution',
             sortBy: 'most-recent',
             limit: 12,
-            template: '<div class="instagram_img_holder" style="background-image: url({{image}});"> </div>',
+            template: '<a href="{{link}}"><div class="instagram_img_holder" style="background-image: url({{image}});"> </div></a>',
             after: function() {
                 // disable button if no more results to load
                 if (!this.hasNext()) {
