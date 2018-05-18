@@ -6,8 +6,9 @@
     <script src="instafeed.min.js"></script>
     <style>
         #instafeed {
-              margin: auto;
               text-align: center;
+              width: 80%;
+              margin: 0 auto;
               display: grid;
               grid-template-columns: 1fr 1fr 1fr;
               grid-template-rows: auto;
@@ -42,4 +43,16 @@
             after: function() {
                 // disable button if no more results to load
                 if (!this.hasNext()) {
-                  btnInstafeedLoad.setAttribute('
+                  btnInstafeedLoad.setAttribute('disabled', 'disabled');
+                }
+              },
+            });
+           userFeed.run();
+           
+           var btnInstafeedLoad = document.getElementById("load-more");
+           btnInstafeedLoad.addEventListener("click", function() {
+           userFeed.next()
+            });
+    </script>
+</body>
+</html>
