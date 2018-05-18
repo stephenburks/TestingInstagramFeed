@@ -9,7 +9,7 @@
               margin: auto;
               text-align: center;
               display: grid;
-              grid-template-columns: 1fr 1fr 1fr;
+              grid-template-columns: 408px 408px 408px;
               grid-template-rows: auto;
             }
        .instagram_img_holder {
@@ -42,16 +42,4 @@
             after: function() {
                 // disable button if no more results to load
                 if (!this.hasNext()) {
-                  btnInstafeedLoad.setAttribute('disabled', 'disabled');
-                }
-              },
-            });
-           userFeed.run();
-           
-           var btnInstafeedLoad = document.getElementById("load-more");
-           btnInstafeedLoad.addEventListener("click", function() {
-           userFeed.next()
-            });
-    </script>
-</body>
-</html>
+                  btnInstafeedLoad.setAttribute('
